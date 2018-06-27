@@ -25,8 +25,10 @@ def spider360(idcount,savepath):
             imgurl=l['qhimg_url']
             imgurl = imgurl.replace("\/", "/")
             suffix=imgurl.split('.')[-1]
+            if suffix!='jpg':
+                continue
             #filename = r"%s/[%s]%s_%s.%s" % (savepath,id[0],id[1].decode('unicode_escape'),count,suffix)
-            filename = r"%s/[%s]%s_%s.%s" % (savepath, id['id'], id['imageid'], count, suffix)
+            filename = r"%s/%s_%s.%s" % (savepath, id['group_title'], count, suffix)
             filename=filename.replace("\/", "")
             count=count+1
             img.save_url(filename,imgurl)

@@ -34,8 +34,8 @@ def save_url(filename,url) :
         print(filename,'is exist')
         return
     global savecount
-    print('save file : ',filename)
-    print('url : ',url)
+    print('save file : ',filename,' ',savecount)
+#    print('url : ',url)
     r=requests.get(url)
     imgfile=open(filename, "wb")
     imgfile.write(r.content)
