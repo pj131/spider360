@@ -14,12 +14,12 @@ import platform
 
 def spider360(idcount,savepath):
     url=r'http://image.so.com/zj?ch=beauty&t1=625&sn=%s' % (idcount)
-    findstring=r'"id":"(.*?)".*?"group_title":"(.*?)".*?"tag":"(.*?)".*?"label":"(.*?)"'
+    # findstring=r'"id":"(.*?)".*?"group_title":"(.*?)".*?"tag":"(.*?)".*?"label":"(.*?)"'
     print('start ......',idcount)
     for id in  img.req_get_json(url) :
 #        print('[%s]%s - %s - %s' % (idcount,id[1].decode('unicode_escape'),id[2].decode('unicode_escape'),id[3].decode('unicode_escape')))
         url = r'http://image.so.com/zvj?ch=beauty&t1=625&id=%s' % id['id']#(id[0])
-        findstring=r'"qhimg_url":"(.*?)"'
+        # findstring=r'"qhimg_url":"(.*?)"'
         count=1
         for l in img.req_get_json(url):
             imgurl=l['qhimg_url']

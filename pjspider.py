@@ -11,11 +11,13 @@ basePath = r"./360photo"
 if platform.system() == 'Windows':
     basePath = r"D:/360photo"
 
-if os.path.isdir(basePath):
-    shutil.rmtree(basePath)
+# if os.path.isdir(basePath):
+#     shutil.rmtree(basePath)
 
 if not os.path.isdir(basePath):
     os.mkdir(basePath)
+
+db360.create_db("./beauty360.db")
 
 print('spider start......',basePath)
 
